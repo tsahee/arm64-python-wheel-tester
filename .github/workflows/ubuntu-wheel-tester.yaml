@@ -79,6 +79,10 @@ jobs:
             PKG_TEST: import pandas
           - PIP_NAME: pywavelets
             PKG_TEST: import pywt
+          - PIP_NAME: ijson
+            PKG_TEST: |
+              import ijson
+              ijson.parse('{ "name":"John", "age":30, "city":"New York"}')
     name: "Ubuntu 20.04LTS Focal for ${{ matrix.WHEEL.PIP_NAME }}"
     steps:
       - run: apt-get update -y
